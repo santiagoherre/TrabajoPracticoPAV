@@ -127,7 +127,7 @@ namespace Juventus
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "UPDATE Motores SET fabricante = @fabricante, modelo = @modelo, idTipoMotor = @idTipoMotor";
+                string consulta = "UPDATE Motores SET fabricante = @fabricante, modelo = @modelo WHERE idTipoMotor = @idTipoMotor";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@fabricante", mot.FabricanteMotor);
                 cmd.Parameters.AddWithValue("modelo", mot.ModeloMotor);

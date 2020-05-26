@@ -44,6 +44,7 @@
             this.cmbTipoMotor = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
+            this.lblid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgMotores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,8 @@
             // 
             // dgMotores
             // 
+            this.dgMotores.AllowUserToAddRows = false;
+            this.dgMotores.AllowUserToDeleteRows = false;
             this.dgMotores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMotores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -69,6 +72,7 @@
             this.dgMotores.Location = new System.Drawing.Point(343, 73);
             this.dgMotores.Margin = new System.Windows.Forms.Padding(2);
             this.dgMotores.Name = "dgMotores";
+            this.dgMotores.ReadOnly = true;
             this.dgMotores.RowTemplate.Height = 24;
             this.dgMotores.Size = new System.Drawing.Size(359, 167);
             this.dgMotores.TabIndex = 3;
@@ -165,6 +169,7 @@
             // 
             // cmbTipoMotor
             // 
+            this.cmbTipoMotor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoMotor.FormattingEnabled = true;
             this.cmbTipoMotor.Location = new System.Drawing.Point(160, 161);
             this.cmbTipoMotor.Margin = new System.Windows.Forms.Padding(2);
@@ -190,9 +195,17 @@
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(71, 37);
             this.btnAlta.TabIndex = 18;
-            this.btnAlta.Text = "Alta";
+            this.btnAlta.Text = "Agregar motor";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(343, 55);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(0, 13);
+            this.lblid.TabIndex = 19;
             // 
             // ABM_Motor
             // 
@@ -200,6 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(730, 258);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cmbTipoMotor);
@@ -240,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fabricante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoMotor;
+        private System.Windows.Forms.Label lblid;
     }
 }

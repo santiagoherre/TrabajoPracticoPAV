@@ -33,15 +33,32 @@ namespace Juventus
 
         private void CargarGrilla()
         {
-            dgMotores.DataSource = AD_Motor.ObtenerTabla("Motores");
+            try
+            {
+                dgMotores.DataSource = AD_Motor.ObtenerTabla("Motores");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error al cargar la grilla");;
+            }
+            
         }
         private Motor ObtenerDatos()
-        {
+        { 
             Motor mot = new Motor();
-            mot.FabricanteMotor = txtFabricante.Text.Trim();
-            mot.ModeloMotor = txtModelo.Text.Trim();
-            mot.IdtipoDeMotor = (int)cmbTipoMotor.SelectedValue;
-            return mot;
+            try
+            {               
+                mot.FabricanteMotor = txtFabricante.Text.Trim();
+                mot.ModeloMotor = txtModelo.Text.Trim();
+                mot.IdtipoDeMotor = (int)cmbTipoMotor.SelectedValue;           
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error al obtener datos de los motores");
+            }
+                return mot;
         }
 
 
@@ -54,21 +71,25 @@ namespace Juventus
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
-            Motor mot = ObtenerDatos();
-            bool resultado = AD_Motor.ActualizarMotor(mot);
-            if (resultado)
+            try
             {
-                MessageBox.Show("Motor actualizada con exito!");
-                CargarGrilla();
-                CargarTiposMotor();
-                LimpiarCampos();
+                Motor mot = ObtenerDatos();
+                bool resultado = AD_Motor.ActualizarMotor(mot);
+                if (resultado)
+                {
+                    MessageBox.Show("Motor actualizada con exito!");
+                    CargarGrilla();
+                    CargarTiposMotor();
+                    LimpiarCampos();
 
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Error.");
+
+                MessageBox.Show("Error al actualizar el motor");;
             }
+            
         }
         private void LimpiarCampos()
         {
@@ -96,27 +117,40 @@ namespace Juventus
         {
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
-            string id = dgMotores.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            Motor mot = AD_Motor.ObtenerMotor(id);
-            LimpiarCampos();
-            CargarCampos(mot);
+            int index = e.RowIndex;
+            if (index < 0) { }
+            else
+            {
+                DataGridViewRow selectedRow = dgMotores.Rows[index];
+                string id = selectedRow.Cells[0].Value.ToString();
+                lblid.Text = id;
+                Motor motor = AD_Motor.ObtenerMotor(id);
+                txtFabricante.Text = motor.FabricanteMotor;
+                txtModelo.Text = motor.ModeloMotor;
+
+                LimpiarCampos();
+                CargarCampos(motor);
+            }                     
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             {
                 Motor mot = ObtenerDatos();
-                bool resultado = AD_Motor.BajaMotor(mot);
-                if (resultado)
+                try
                 {
-                    MessageBox.Show("El motor fue eliminado con exito.");
-                    LimpiarCampos();
-                    CargarTiposMotor();
-                    CargarGrilla();
+                    bool resultado = AD_Motor.BajaMotor(mot);
+                    if (resultado)
+                    {
+                        MessageBox.Show("El motor fue eliminado con exito.");
+                        LimpiarCampos();
+                        CargarTiposMotor();
+                        CargarGrilla();
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("No existe el motor.");
+                    MessageBox.Show("Error al eliminar el motor seleccionado");
                 }
             }
         }
@@ -124,18 +158,22 @@ namespace Juventus
         private void btnAlta_Click(object sender, EventArgs e)
         {
             Motor mot = ObtenerDatos();
-            bool resultado = AD_Motor.AgregarMotor(mot);
-            if (resultado)
+            try
             {
-                MessageBox.Show("El motor fue agregado con exito");
-                LimpiarCampos();
-                CargarTiposMotor();
-                CargarGrilla();
+                bool resultado = AD_Motor.AgregarMotor(mot);
+                if (resultado)
+                {
+                    MessageBox.Show("El motor fue agregado con exito");
+                    LimpiarCampos();
+                    CargarTiposMotor();
+                    CargarGrilla();
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Error al agregar el motor.");
-            }
+                MessageBox.Show("Error al agregar el motor");
+            }  
+           
         }
     }
 }

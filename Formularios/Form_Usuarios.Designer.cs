@@ -55,55 +55,49 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 24);
+            this.label1.Size = new System.Drawing.Size(68, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuarios";
             // 
             // txtNombreDeUsuario
             // 
-            this.txtNombreDeUsuario.Location = new System.Drawing.Point(144, 70);
-            this.txtNombreDeUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreDeUsuario.Location = new System.Drawing.Point(108, 57);
             this.txtNombreDeUsuario.Name = "txtNombreDeUsuario";
-            this.txtNombreDeUsuario.Size = new System.Drawing.Size(249, 22);
+            this.txtNombreDeUsuario.Size = new System.Drawing.Size(188, 20);
             this.txtNombreDeUsuario.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(144, 116);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(108, 94);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(249, 22);
+            this.txtPassword.Size = new System.Drawing.Size(188, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 119);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(45, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 74);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nombre";
             // 
             // btnAltaUsuario
             // 
-            this.btnAltaUsuario.Location = new System.Drawing.Point(427, 155);
-            this.btnAltaUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAltaUsuario.Location = new System.Drawing.Point(320, 130);
             this.btnAltaUsuario.Name = "btnAltaUsuario";
-            this.btnAltaUsuario.Size = new System.Drawing.Size(100, 28);
+            this.btnAltaUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnAltaUsuario.TabIndex = 4;
             this.btnAltaUsuario.Text = "Agregar";
             this.btnAltaUsuario.UseVisualStyleBackColor = true;
@@ -118,12 +112,11 @@
             this.Id,
             this.NombreDeUsuario,
             this.Password});
-            this.grillaUsuarios.Location = new System.Drawing.Point(13, 229);
-            this.grillaUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.grillaUsuarios.Location = new System.Drawing.Point(10, 186);
             this.grillaUsuarios.Name = "grillaUsuarios";
             this.grillaUsuarios.ReadOnly = true;
             this.grillaUsuarios.RowHeadersWidth = 51;
-            this.grillaUsuarios.Size = new System.Drawing.Size(665, 342);
+            this.grillaUsuarios.Size = new System.Drawing.Size(499, 278);
             this.grillaUsuarios.TabIndex = 6;
             this.grillaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaUsuarios_CellClick_1);
             // 
@@ -158,19 +151,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 166);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 17);
+            this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Repetir Password";
             // 
             // txtRepetirPassword
             // 
-            this.txtRepetirPassword.Location = new System.Drawing.Point(144, 162);
-            this.txtRepetirPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRepetirPassword.Location = new System.Drawing.Point(108, 132);
             this.txtRepetirPassword.Name = "txtRepetirPassword";
-            this.txtRepetirPassword.Size = new System.Drawing.Size(249, 22);
+            this.txtRepetirPassword.Size = new System.Drawing.Size(188, 20);
             this.txtRepetirPassword.TabIndex = 3;
             // 
             // groupBox1
@@ -186,40 +177,35 @@
             this.groupBox1.Controls.Add(this.txtRepetirPassword);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(10, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(665, 215);
+            this.groupBox1.Size = new System.Drawing.Size(499, 175);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(140, 36);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Location = new System.Drawing.Point(105, 29);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(0, 17);
+            this.lblId.Size = new System.Drawing.Size(0, 13);
             this.lblId.TabIndex = 13;
             this.lblId.Visible = false;
             // 
             // lblIas
             // 
             this.lblIas.AutoSize = true;
-            this.lblIas.Location = new System.Drawing.Point(72, 36);
-            this.lblIas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIas.Location = new System.Drawing.Point(54, 29);
             this.lblIas.Name = "lblIas";
-            this.lblIas.Size = new System.Drawing.Size(19, 17);
+            this.lblIas.Size = new System.Drawing.Size(16, 13);
             this.lblIas.TabIndex = 11;
             this.lblIas.Text = "Id";
             // 
             // btnModificarUsuario
             // 
-            this.btnModificarUsuario.Location = new System.Drawing.Point(544, 156);
-            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificarUsuario.Location = new System.Drawing.Point(408, 130);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.Size = new System.Drawing.Size(100, 28);
+            this.btnModificarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnModificarUsuario.TabIndex = 5;
             this.btnModificarUsuario.Text = "Modificar";
             this.btnModificarUsuario.UseVisualStyleBackColor = true;
@@ -227,10 +213,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(440, 579);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(330, 470);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -238,10 +223,9 @@
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(557, 579);
-            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(418, 470);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarUsuario.TabIndex = 6;
             this.btnEliminarUsuario.Text = "Eliminar";
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
@@ -249,15 +233,14 @@
             // 
             // Form_Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 623);
+            this.ClientSize = new System.Drawing.Size(521, 506);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grillaUsuarios);
             this.Controls.Add(this.btnEliminarUsuario);
             this.Controls.Add(this.btnLimpiar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Usuarios";
             this.Text = "Configuracion Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).EndInit();

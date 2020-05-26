@@ -45,6 +45,8 @@
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actividadesToolStripMenuItem,
+            this.personasToolStripMenuItem,
             this.bienesToolStripMenuItem,
             this.areasToolStripMenuItem,
             this.usuariosToolStripMenuItem,
@@ -185,12 +188,28 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(1028, 585);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarPersonaToolStripMenuItem});
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.personasToolStripMenuItem.Text = "Personas";
+
+            // 
+            // agregarPersonaToolStripMenuItem
+            // 
+            this.agregarPersonaToolStripMenuItem.Name = "agregarPersonaToolStripMenuItem";
+            this.agregarPersonaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarPersonaToolStripMenuItem.Text = "Agregar persona";
+            this.agregarPersonaToolStripMenuItem.Click += new System.EventHandler(this.agregarPersonaToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -233,5 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarPersonaToolStripMenuItem;
     }
 }

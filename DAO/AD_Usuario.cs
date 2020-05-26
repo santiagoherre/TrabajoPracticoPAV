@@ -121,17 +121,17 @@ namespace Juventus.Usuarios
             return resultado;
         }
 
-        public static bool EliminarUsuario(string nombreDeUsuario, string password)
+        public static bool EliminarUsuario(Usuario usu)
         {
             SqlConnection cn = new SqlConnection(cadenaConexion);
             bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "DELETE FROM Usuarios WHERE usuario = @nombreUsu and password = @pass)";
+                string consulta = "DELETE FROM Usuarios WHERE id = @id";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
-                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@id", usu.Id);
+                
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -196,17 +196,18 @@ namespace Juventus.Usuarios
             }
         }
 
-        public static bool ModificarUsuario(string nombreDeUsuario, string password)
+        public static bool ModificarUsuario(Usuario usu)
         {
             SqlConnection cn = new SqlConnection(cadenaConexion);
             bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Usuarios SET usuario = @nombreUsu, password = @pass";
+                string consulta = "UPDATE Usuarios SET usuario = @nombreUsu, password = @pass WHERE id = @id";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
-                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@nombreUsu", usu.NombreDeUsuario);
+                cmd.Parameters.AddWithValue("@pass", usu.Password);
+                cmd.Parameters.AddWithValue("@id", usu.Id);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 

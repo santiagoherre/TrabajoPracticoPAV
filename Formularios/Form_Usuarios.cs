@@ -85,45 +85,63 @@ namespace Juventus.Usuarios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea eliminar este Usuario? Esta acción no tiene vuelta atras", "Confirmación", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.Yes)
+            try
             {
-                Usuario usu = new Usuario();
-                usu.NombreDeUsuario = txtNombreDeUsuario.Text;
-                usu.Password = txtPassword.Text;
+                DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea eliminar este Usuario? Esta acción no tiene vuelta atras", "Confirmación", MessageBoxButtons.YesNo);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Usuario usu = new Usuario();
+                    usu.NombreDeUsuario = txtNombreDeUsuario.Text;
+                    usu.Password = txtPassword.Text;
+                    usu.Id = Int32.Parse(lblId.Text);
 
-                bool res = AD_Usuarios.EliminarUsuario(usu.NombreDeUsuario , usu.Password);
-                CargarGrilla();
-                LimpiarCampos();
+                    bool res = AD_Usuarios.EliminarUsuario(usu);
+                    CargarGrilla();
+                    LimpiarCampos();
+                }
             }
+            catch (Exception)
+            {
 
+                throw;
+            }
+           
             CargarGrilla();
 
         }
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea modificar este Usuario? Esta acción no tiene vuelta atras", "Confirmación", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.Yes)
+            try
             {
-                int id = int.Parse(lblId.Text);
-                bool resultado = AD_Usuarios.validarPorId(id);
-                if (resultado)
-                { 
-                    Usuario usu = new Usuario();
-                    usu.NombreDeUsuario = txtNombreDeUsuario.Text;
-                    usu.Password = txtPassword.Text;
-                    usu.Id = id;
-
-                bool res = AD_Usuarios.ModificarUsuario(usu.NombreDeUsuario, usu.Password);
-                CargarGrilla();
-                LimpiarCampos();
-                }
-                else
+                DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea modificar este Usuario? Esta acción no tiene vuelta atras", "Confirmación", MessageBoxButtons.YesNo);
+                if (respuesta == DialogResult.Yes)
                 {
-                    MessageBox.Show("El usuario que se desea modificar no se encuentra en la base de datos");
+                    int id = int.Parse(lblId.Text);
+                    bool resultado = AD_Usuarios.validarPorId(id);
+                    if (resultado && (txtPassword.Text == txtRepetirPassword.Text))
+                    {
+                        Usuario usu = new Usuario();
+                        usu.NombreDeUsuario = txtNombreDeUsuario.Text;
+                        usu.Password = txtPassword.Text;
+                        usu.Id = id;
+
+                        bool res = AD_Usuarios.ModificarUsuario(usu);
+                        CargarGrilla();
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar usuario, verifique contraseñas");
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al modificar el usuario");
+
+            }
+           
             CargarGrilla();
         }
 

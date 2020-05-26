@@ -56,15 +56,12 @@ namespace Juventus.Vehiculo
 
                     grillaVehiculos.DataSource = AD_Vehiculo.ObtenerElementos();
                     limpiarCampos();
-
-
                 }
 
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error al agregar el vehículo");
             }
 
 
@@ -125,14 +122,15 @@ namespace Juventus.Vehiculo
             }
             else
             {
-                MessageBox.Show("El usuario que se desea modificar no se encuentra en la base de datos");
+                MessageBox.Show("Error al modificar el vehiculo");
             }
+            txtPatente.Enabled = true;
         }
 
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea eliminar este Elemento de cocina? Esta acción no tiene vuelta atras", "Confrmación", MessageBoxButtons.YesNo);
+            DialogResult respuesta = MessageBox.Show("¿Esta seguro que desea eliminar este vehiculo? Esta acción no tiene vuelta atras", "Confrmación", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.Yes)
             {
                 Vehiculo vehiculo = new Vehiculo();
@@ -149,11 +147,9 @@ namespace Juventus.Vehiculo
 
         private void GrillaVehiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtPatente.Enabled = false;
             int index = e.RowIndex;
-            if (index < 0)
-            {
-
-            }
+            if (index < 0) { }
             else
             {
                 DataGridViewRow selectedRow = grillaVehiculos.Rows[index];
@@ -161,7 +157,22 @@ namespace Juventus.Vehiculo
                 Vehiculo vehiculo = AD_Vehiculo.buscarVehiculo(patente);
                 txtPatente.Text = vehiculo.Patente;
                 txtKilometraje.Text = vehiculo.Kilometraje.ToString();
-                txtFechaDeCompra.Text = vehiculo.FechaDeCompra;
+                DateTime fecha = DateTime.Parse(vehiculo.FechaDeCompra);
+                string dia = fecha.Day.ToString();
+                string mes = fecha.Month.ToString();
+                string año = fecha.Year.ToString();
+
+                if (dia.Length == 1)
+                {
+                    dia = "0" + dia;
+                }
+                if (mes.Length == 1)
+                {
+                    mes = "0" + mes;
+                }
+
+                txtFechaDeCompra.Text = dia + mes + año;
+                              
             }
 
         }
