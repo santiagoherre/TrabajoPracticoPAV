@@ -30,17 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Actividad));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbPatenteNo = new System.Windows.Forms.RadioButton();
-            this.rbPatenteSi = new System.Windows.Forms.RadioButton();
-            this.txtPatente = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbGrupoNo = new System.Windows.Forms.RadioButton();
-            this.rbGrupoSi = new System.Windows.Forms.RadioButton();
+            this.cmbPatentes = new System.Windows.Forms.ComboBox();
             this.cmbGrupo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbArea = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cmbTipoActividad = new System.Windows.Forms.ComboBox();
             this.txtInicio = new System.Windows.Forms.TextBox();
             this.txtFin = new System.Windows.Forms.TextBox();
@@ -65,16 +59,16 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaActividades)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.cmbPatentes);
+            this.groupBox1.Controls.Add(this.cmbGrupo);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cmbArea);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbTipoActividad);
             this.groupBox1.Controls.Add(this.txtInicio);
             this.groupBox1.Controls.Add(this.txtFin);
@@ -93,105 +87,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // groupBox3
+            // cmbPatentes
             // 
-            this.groupBox3.Controls.Add(this.rbPatenteNo);
-            this.groupBox3.Controls.Add(this.rbPatenteSi);
-            this.groupBox3.Controls.Add(this.txtPatente);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(357, 78);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(386, 37);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            // 
-            // rbPatenteNo
-            // 
-            this.rbPatenteNo.AutoSize = true;
-            this.rbPatenteNo.Location = new System.Drawing.Point(341, 14);
-            this.rbPatenteNo.Name = "rbPatenteNo";
-            this.rbPatenteNo.Size = new System.Drawing.Size(39, 17);
-            this.rbPatenteNo.TabIndex = 13;
-            this.rbPatenteNo.TabStop = true;
-            this.rbPatenteNo.Text = "No";
-            this.rbPatenteNo.UseVisualStyleBackColor = true;
-            // 
-            // rbPatenteSi
-            // 
-            this.rbPatenteSi.AutoSize = true;
-            this.rbPatenteSi.Location = new System.Drawing.Point(290, 14);
-            this.rbPatenteSi.Name = "rbPatenteSi";
-            this.rbPatenteSi.Size = new System.Drawing.Size(34, 17);
-            this.rbPatenteSi.TabIndex = 12;
-            this.rbPatenteSi.TabStop = true;
-            this.rbPatenteSi.Text = "Si";
-            this.rbPatenteSi.UseVisualStyleBackColor = true;
-            // 
-            // txtPatente
-            // 
-            this.txtPatente.Location = new System.Drawing.Point(146, 11);
-            this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Size = new System.Drawing.Size(121, 20);
-            this.txtPatente.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Patente";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbGrupoNo);
-            this.groupBox2.Controls.Add(this.rbGrupoSi);
-            this.groupBox2.Controls.Add(this.cmbGrupo);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(357, 113);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(386, 36);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            // 
-            // rbGrupoNo
-            // 
-            this.rbGrupoNo.AutoSize = true;
-            this.rbGrupoNo.Location = new System.Drawing.Point(341, 13);
-            this.rbGrupoNo.Name = "rbGrupoNo";
-            this.rbGrupoNo.Size = new System.Drawing.Size(39, 17);
-            this.rbGrupoNo.TabIndex = 16;
-            this.rbGrupoNo.TabStop = true;
-            this.rbGrupoNo.Text = "No";
-            this.rbGrupoNo.UseVisualStyleBackColor = true;
-            // 
-            // rbGrupoSi
-            // 
-            this.rbGrupoSi.AutoSize = true;
-            this.rbGrupoSi.Location = new System.Drawing.Point(290, 13);
-            this.rbGrupoSi.Name = "rbGrupoSi";
-            this.rbGrupoSi.Size = new System.Drawing.Size(34, 17);
-            this.rbGrupoSi.TabIndex = 15;
-            this.rbGrupoSi.TabStop = true;
-            this.rbGrupoSi.Text = "Si";
-            this.rbGrupoSi.UseVisualStyleBackColor = true;
+            this.cmbPatentes.FormattingEnabled = true;
+            this.cmbPatentes.Location = new System.Drawing.Point(503, 87);
+            this.cmbPatentes.Name = "cmbPatentes";
+            this.cmbPatentes.Size = new System.Drawing.Size(121, 21);
+            this.cmbPatentes.TabIndex = 23;
             // 
             // cmbGrupo
             // 
             this.cmbGrupo.FormattingEnabled = true;
-            this.cmbGrupo.Location = new System.Drawing.Point(146, 6);
+            this.cmbGrupo.Location = new System.Drawing.Point(503, 119);
             this.cmbGrupo.Name = "cmbGrupo";
             this.cmbGrupo.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrupo.TabIndex = 14;
+            this.cmbGrupo.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 11);
+            this.label9.Location = new System.Drawing.Point(374, 124);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 7;
+            this.label9.TabIndex = 21;
             this.label9.Text = "Grupo";
             // 
             // cmbArea
@@ -201,6 +119,15 @@
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(121, 21);
             this.cmbArea.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(372, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Patente";
             // 
             // cmbTipoActividad
             // 
@@ -279,11 +206,10 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(68, 28);
+            this.lblId.Location = new System.Drawing.Point(35, 28);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(35, 13);
+            this.lblId.Size = new System.Drawing.Size(0, 13);
             this.lblId.TabIndex = 1;
-            this.lblId.Text = "label2";
             // 
             // label1
             // 
@@ -313,6 +239,7 @@
             this.grillaActividades.ReadOnly = true;
             this.grillaActividades.Size = new System.Drawing.Size(776, 274);
             this.grillaActividades.TabIndex = 1;
+            this.grillaActividades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaActividades_CellClick);
             // 
             // Id
             // 
@@ -380,6 +307,7 @@
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -389,6 +317,7 @@
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -416,10 +345,6 @@
             this.Text = "Administrar actividades";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaActividades)).EndInit();
             this.ResumeLayout(false);
 
@@ -434,23 +359,13 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grillaActividades;
-        private System.Windows.Forms.ComboBox cmbGrupo;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.ComboBox cmbTipoActividad;
-        private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.TextBox txtInicio;
         private System.Windows.Forms.TextBox txtFin;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbPatenteNo;
-        private System.Windows.Forms.RadioButton rbPatenteSi;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbGrupoNo;
-        private System.Windows.Forms.RadioButton rbGrupoSi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
@@ -462,5 +377,9 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.ComboBox cmbPatentes;
+        private System.Windows.Forms.ComboBox cmbGrupo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

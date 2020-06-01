@@ -37,5 +37,20 @@ namespace Juventus.Actividades
             this.patente = patente;
             this.idGrupo = idGrupo;
         }
+
+        public Actividad(string descripcion, DateTime fechaInicio, DateTime fechaFin, int idTipoActividad, int idArea, string patente, int idGrupo)
+        {
+            this.descripcion = descripcion;
+            this.fechaInicio = fechaInicio;
+            this.fechaFin = fechaFin;
+            this.idTipoActividad = idTipoActividad;
+            this.idArea = idArea;
+            this.patente = patente;
+            this.idGrupo = idGrupo;
+        }
+
+        public Actividad()
+        {
+        }
     }
 }
