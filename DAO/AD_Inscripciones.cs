@@ -52,5 +52,41 @@ namespace Juventus.DAO
             return resultado;
         }
 
+        public static bool validarExistencia(Inscripcion insc)
+        {
+            SqlConnection cn = new SqlConnection(connectionString);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM inscripciones WHERE idTipoActividad= @idTipoActividad AND dni = @dni";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@idTipoActividad", insc.IdTipoActividad);
+                cmd.Parameters.AddWithValue("@dni", insc.Dni);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                if (tabla.Rows.Count == 0)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cn.Close(); }
+        }
+
     }
 }

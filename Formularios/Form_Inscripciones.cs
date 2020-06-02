@@ -111,7 +111,7 @@ namespace Juventus.Formularios
         }
 
         private void btnInscripcion_Click(object sender, EventArgs e)
-        {
+        {          
             Inscripcion insc = new Inscripcion();
             insc.Fecha = DateTime.Now;
             insc.Dni = int.Parse(txtNroDoc.Text);
@@ -120,18 +120,32 @@ namespace Juventus.Formularios
 
             try
             {
-                bool resultado = AD_Inscripciones.insertarInscripcion(insc);
-                if (resultado)
+                bool existe = AD_Inscripciones.validarExistencia(insc);
+                if (existe)
                 {
-                    MessageBox.Show("Inscripcion realizada con exito");
-                    limpiarCampos();
+                    try
+                    {
+                        bool resultado = AD_Inscripciones.insertarInscripcion(insc);
+                        if (resultado)
+                        {
+                            MessageBox.Show("Inscripcion realizada con exito");
+                            limpiarCampos();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error al inscribirse");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ya se encuentra inscripto para esta actividad");
                 }
             }
-            catch (Exception)
-            {
+            catch (Exception) 
+            { 
                 MessageBox.Show("Error al inscribirse");
-            }
-           
+            }           
         }
 
         private void limpiarCampos()
