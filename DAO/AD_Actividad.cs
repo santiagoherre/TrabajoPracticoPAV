@@ -280,7 +280,7 @@ namespace Juventus.Actividades
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT a.id as id, a.descripcion as descripcion, a.fechaInicio as fechaInicio, a.fechaFin as fechaFin FROM Actividades WHERE a.id = @idAct";
+                string consulta = "SELECT id, descripcion, fechaInicio, fechaFin FROM Actividades WHERE idTipoActividad = @idAct";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@idAct", idTipoActividad);

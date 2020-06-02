@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Actividad));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtInicio = new System.Windows.Forms.MaskedTextBox();
+            this.txtFin = new System.Windows.Forms.MaskedTextBox();
             this.cmbPatentes = new System.Windows.Forms.ComboBox();
             this.cmbGrupo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbArea = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbTipoActividad = new System.Windows.Forms.ComboBox();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.txtFin = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,14 +64,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtInicio);
+            this.groupBox1.Controls.Add(this.txtFin);
             this.groupBox1.Controls.Add(this.cmbPatentes);
             this.groupBox1.Controls.Add(this.cmbGrupo);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cmbArea);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbTipoActividad);
-            this.groupBox1.Controls.Add(this.txtInicio);
-            this.groupBox1.Controls.Add(this.txtFin);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -85,7 +85,25 @@
             this.groupBox1.Size = new System.Drawing.Size(776, 187);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Actividades";
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(115, 90);
+            this.txtInicio.Mask = "00/00/0000";
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(100, 20);
+            this.txtInicio.TabIndex = 2;
+            this.txtInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtFin
+            // 
+            this.txtFin.Location = new System.Drawing.Point(115, 119);
+            this.txtFin.Mask = "00/00/0000";
+            this.txtFin.Name = "txtFin";
+            this.txtFin.Size = new System.Drawing.Size(100, 20);
+            this.txtFin.TabIndex = 3;
+            this.txtFin.ValidatingType = typeof(System.DateTime);
             // 
             // cmbPatentes
             // 
@@ -93,7 +111,7 @@
             this.cmbPatentes.Location = new System.Drawing.Point(503, 87);
             this.cmbPatentes.Name = "cmbPatentes";
             this.cmbPatentes.Size = new System.Drawing.Size(121, 21);
-            this.cmbPatentes.TabIndex = 23;
+            this.cmbPatentes.TabIndex = 6;
             // 
             // cmbGrupo
             // 
@@ -101,7 +119,7 @@
             this.cmbGrupo.Location = new System.Drawing.Point(503, 119);
             this.cmbGrupo.Name = "cmbGrupo";
             this.cmbGrupo.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrupo.TabIndex = 22;
+            this.cmbGrupo.TabIndex = 7;
             // 
             // label9
             // 
@@ -118,7 +136,7 @@
             this.cmbArea.Location = new System.Drawing.Point(503, 57);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(121, 21);
-            this.cmbArea.TabIndex = 13;
+            this.cmbArea.TabIndex = 5;
             // 
             // label8
             // 
@@ -135,28 +153,14 @@
             this.cmbTipoActividad.Location = new System.Drawing.Point(503, 25);
             this.cmbTipoActividad.Name = "cmbTipoActividad";
             this.cmbTipoActividad.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoActividad.TabIndex = 12;
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(115, 87);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(100, 20);
-            this.txtInicio.TabIndex = 10;
-            // 
-            // txtFin
-            // 
-            this.txtFin.Location = new System.Drawing.Point(115, 119);
-            this.txtFin.Name = "txtFin";
-            this.txtFin.Size = new System.Drawing.Size(100, 20);
-            this.txtFin.TabIndex = 9;
+            this.cmbTipoActividad.TabIndex = 4;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(115, 57);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // label7
             // 
@@ -238,7 +242,7 @@
             this.grillaActividades.Name = "grillaActividades";
             this.grillaActividades.ReadOnly = true;
             this.grillaActividades.Size = new System.Drawing.Size(776, 274);
-            this.grillaActividades.TabIndex = 1;
+            this.grillaActividades.TabIndex = 20;
             this.grillaActividades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaActividades_CellClick);
             // 
             // Id
@@ -304,7 +308,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(527, 205);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 17;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -314,7 +318,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(710, 205);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -324,7 +328,7 @@
             this.btnModificar.Location = new System.Drawing.Point(618, 205);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 19;
+            this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
@@ -361,8 +365,6 @@
         private System.Windows.Forms.DataGridView grillaActividades;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.ComboBox cmbTipoActividad;
-        private System.Windows.Forms.TextBox txtInicio;
-        private System.Windows.Forms.TextBox txtFin;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -381,5 +383,7 @@
         private System.Windows.Forms.ComboBox cmbGrupo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox txtInicio;
+        private System.Windows.Forms.MaskedTextBox txtFin;
     }
 }

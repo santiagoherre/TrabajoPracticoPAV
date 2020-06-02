@@ -120,6 +120,7 @@
       <DependentUpon>ABM_Motor.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AD_Motor.cs" />
+    <Compile Include="Negocio\Inscripcion.cs" />
     <Compile Include="Negocio\Motor.cs" />
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>

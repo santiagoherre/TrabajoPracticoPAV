@@ -1,4 +1,6 @@
 ﻿using Juventus.Actividades;
+using Juventus.DAO;
+using Juventus.Negocio;
 using Juventus.Varios;
 using System;
 using System.Collections.Generic;
@@ -84,7 +86,63 @@ namespace Juventus.Formularios
 
         private void btnBuscarActividades_Click(object sender, EventArgs e)
         {
-            
+            int id = (int)cmbTipoActividad.SelectedValue;
+            txtIdActividad.Text = id.ToString();
+            try
+            {                
+                grdActividades.DataSource = AD_Actividad.obtenerActividadesPorTipo(id);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al buscar las actividades...");
+            }
+        }
+
+        private void grdActividades_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index < 0) { }
+            else
+            {
+                DataGridViewRow selectedRow = grdActividades.Rows[index];
+                int id = int.Parse(selectedRow.Cells[0].Value.ToString());
+                txtIdActividadElegida.Text = id.ToString();
+            }
+        }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            Inscripcion insc = new Inscripcion();
+            insc.Fecha = DateTime.Now;
+            insc.Dni = int.Parse(txtNroDoc.Text);
+            insc.IdTipoDocumento = (int)cmbTipoDocumento.SelectedValue;
+            insc.IdTipoActividad = int.Parse(txtIdActividadElegida.Text);
+
+            try
+            {
+                bool resultado = AD_Inscripciones.insertarInscripcion(insc);
+                if (resultado)
+                {
+                    MessageBox.Show("Inscripcion realizada con exito");
+                    limpiarCampos();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al inscribirse");
+            }
+           
+        }
+
+        private void limpiarCampos()
+        {
+            cmbTipoDocumento.SelectedIndex = -1;
+            cmbTipoActividad.SelectedIndex = -1;
+            txtApellidoPersona.Text = "";
+            txtNombrePersona.Text = "";
+            txtNroDoc.Text = "";
+            txtIdActividadElegida.Text = "";
+            txtIdActividad.Text = "";
         }
     }
 }

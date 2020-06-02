@@ -37,12 +37,14 @@
             this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.cmbTipoActividad = new System.Windows.Forms.ComboBox();
             this.lblActividad = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdActividades = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscarActividades = new System.Windows.Forms.Button();
             this.btnInscripcion = new System.Windows.Forms.Button();
             this.txtApellidoPersona = new System.Windows.Forms.TextBox();
@@ -50,12 +52,12 @@
             this.txtNombrePersona = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscarPersona = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIdActividad = new System.Windows.Forms.TextBox();
+            this.lblActividadElegida = new System.Windows.Forms.Label();
+            this.txtIdActividadElegida = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdActividades)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +110,7 @@
             this.cmbTipoDocumento.Location = new System.Drawing.Point(105, 68);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoDocumento.TabIndex = 5;
+            this.cmbTipoDocumento.TabIndex = 1;
             // 
             // lblNumero
             // 
@@ -124,14 +126,7 @@
             this.txtNroDoc.Location = new System.Drawing.Point(68, 102);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(100, 20);
-            this.txtNroDoc.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(495, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(39, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtNroDoc.TabIndex = 2;
             // 
             // cmbTipoActividad
             // 
@@ -140,7 +135,7 @@
             this.cmbTipoActividad.Location = new System.Drawing.Point(338, 68);
             this.cmbTipoActividad.Name = "cmbTipoActividad";
             this.cmbTipoActividad.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoActividad.TabIndex = 9;
+            this.cmbTipoActividad.TabIndex = 4;
             // 
             // lblActividad
             // 
@@ -151,18 +146,9 @@
             this.lblActividad.TabIndex = 8;
             this.lblActividad.Text = "Tipo de actividad";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(470, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Id:";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.grdActividades);
             this.groupBox1.Location = new System.Drawing.Point(18, 176);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(528, 193);
@@ -170,28 +156,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actividades disponibles";
             // 
-            // dataGridView1
+            // grdActividades
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdActividades.AllowUserToAddRows = false;
+            this.grdActividades.AllowUserToDeleteRows = false;
+            this.grdActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.fechaInicio,
             this.fechaFin,
             this.descripcion});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(515, 167);
-            this.dataGridView1.TabIndex = 0;
+            this.grdActividades.Location = new System.Drawing.Point(7, 20);
+            this.grdActividades.Name = "grdActividades";
+            this.grdActividades.ReadOnly = true;
+            this.grdActividades.Size = new System.Drawing.Size(515, 167);
+            this.grdActividades.TabIndex = 0;
+            this.grdActividades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdActividades_CellClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
+            // 
+            // fechaFin
+            // 
+            this.fechaFin.DataPropertyName = "fechaFin";
+            this.fechaFin.HeaderText = "Fecha Fin";
+            this.fechaFin.Name = "fechaFin";
+            this.fechaFin.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // btnBuscarActividades
             // 
             this.btnBuscarActividades.Location = new System.Drawing.Point(384, 95);
             this.btnBuscarActividades.Name = "btnBuscarActividades";
             this.btnBuscarActividades.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarActividades.TabIndex = 13;
+            this.btnBuscarActividades.TabIndex = 5;
             this.btnBuscarActividades.Text = "Buscar actividades";
             this.btnBuscarActividades.UseVisualStyleBackColor = true;
             this.btnBuscarActividades.Click += new System.EventHandler(this.btnBuscarActividades_Click);
@@ -201,9 +217,10 @@
             this.btnInscripcion.Location = new System.Drawing.Point(471, 375);
             this.btnInscripcion.Name = "btnInscripcion";
             this.btnInscripcion.Size = new System.Drawing.Size(75, 23);
-            this.btnInscripcion.TabIndex = 14;
+            this.btnInscripcion.TabIndex = 6;
             this.btnInscripcion.Text = "Incribir";
             this.btnInscripcion.UseVisualStyleBackColor = true;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
             // 
             // txtApellidoPersona
             // 
@@ -244,44 +261,52 @@
             this.btnBuscarPersona.Location = new System.Drawing.Point(174, 102);
             this.btnBuscarPersona.Name = "btnBuscarPersona";
             this.btnBuscarPersona.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarPersona.TabIndex = 19;
+            this.btnBuscarPersona.TabIndex = 3;
             this.btnBuscarPersona.Text = "Buscar actividades";
             this.btnBuscarPersona.UseVisualStyleBackColor = true;
             this.btnBuscarPersona.Click += new System.EventHandler(this.btnBuscarPersona_Click);
             // 
-            // id
+            // label3
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(470, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Id:";
             // 
-            // fechaInicio
+            // txtIdActividad
             // 
-            this.fechaInicio.DataPropertyName = "fechaInicio";
-            this.fechaInicio.HeaderText = "Fecha Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.ReadOnly = true;
+            this.txtIdActividad.Enabled = false;
+            this.txtIdActividad.Location = new System.Drawing.Point(495, 68);
+            this.txtIdActividad.Name = "txtIdActividad";
+            this.txtIdActividad.Size = new System.Drawing.Size(39, 20);
+            this.txtIdActividad.TabIndex = 10;
             // 
-            // fechaFin
+            // lblActividadElegida
             // 
-            this.fechaFin.DataPropertyName = "fechaFin";
-            this.fechaFin.HeaderText = "Fecha Fin";
-            this.fechaFin.Name = "fechaFin";
-            this.fechaFin.ReadOnly = true;
+            this.lblActividadElegida.AutoSize = true;
+            this.lblActividadElegida.Location = new System.Drawing.Point(318, 380);
+            this.lblActividadElegida.Name = "lblActividadElegida";
+            this.lblActividadElegida.Size = new System.Drawing.Size(102, 13);
+            this.lblActividadElegida.TabIndex = 20;
+            this.lblActividadElegida.Text = "Id actividad elegida:";
             // 
-            // descripcion
+            // txtIdActividadElegida
             // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
+            this.txtIdActividadElegida.Enabled = false;
+            this.txtIdActividadElegida.Location = new System.Drawing.Point(426, 375);
+            this.txtIdActividadElegida.Name = "txtIdActividadElegida";
+            this.txtIdActividadElegida.Size = new System.Drawing.Size(39, 20);
+            this.txtIdActividadElegida.TabIndex = 19;
             // 
             // Inscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 405);
+            this.Controls.Add(this.lblActividadElegida);
+            this.Controls.Add(this.txtIdActividadElegida);
             this.Controls.Add(this.btnBuscarPersona);
             this.Controls.Add(this.txtNombrePersona);
             this.Controls.Add(this.label5);
@@ -291,7 +316,7 @@
             this.Controls.Add(this.btnBuscarActividades);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtIdActividad);
             this.Controls.Add(this.cmbTipoActividad);
             this.Controls.Add(this.lblActividad);
             this.Controls.Add(this.txtNroDoc);
@@ -304,10 +329,11 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inscripciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inscripciones";
             this.Load += new System.EventHandler(this.Inscripciones_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdActividades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,12 +349,10 @@
         private System.Windows.Forms.ComboBox cmbTipoDocumento;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.TextBox txtNroDoc;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox cmbTipoActividad;
         private System.Windows.Forms.Label lblActividad;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdActividades;
         private System.Windows.Forms.Button btnBuscarActividades;
         private System.Windows.Forms.Button btnInscripcion;
         private System.Windows.Forms.TextBox txtApellidoPersona;
@@ -336,6 +360,10 @@
         private System.Windows.Forms.TextBox txtNombrePersona;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBuscarPersona;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtIdActividad;
+        private System.Windows.Forms.Label lblActividadElegida;
+        private System.Windows.Forms.TextBox txtIdActividadElegida;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
