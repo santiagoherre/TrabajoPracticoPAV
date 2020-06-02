@@ -146,10 +146,6 @@ namespace Juventus.Varios
             try
             {
 
-                //UPDATE table_name
-                //SET column1 = value1, column2 = value2, ...
-                //WHERE condition;
-
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "UPDATE Personas SET nombre = @nombre, apellido = @apellido, fechaNacimiento = @fechaNacimiento, idTipoDocumento = @idTipoDocumento, dni = @nroDocumento, sexo = @idSexo,  institucionAcademica = @institucion, añoEscolar = @añoEscolar, direccion = @direccion, telefono = @telefono, IdGrupo = @idGrupo, correoElectronico = @correoElectronico WHERE dni like @nroDocumento";
                 cmd.Parameters.Clear();
@@ -332,6 +328,35 @@ namespace Juventus.Varios
             finally
             {
                 cn.Close();
+            }
+        }
+
+        public static DataTable obtenerPersonaPorDocumento(int nroDoc, int idTipoDoc)
+        {
+            String cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Personas WHERE dni = @nroDoc AND idTipoDocumento = @idTipoDoc";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nroDoc", nroDoc);
+                cmd.Parameters.AddWithValue("idTipoDoc", idTipoDoc);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

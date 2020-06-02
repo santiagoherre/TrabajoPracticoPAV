@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AD_Inscripciones.cs" />
     <Compile Include="Formularios\AgregarPersona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,12 @@
     </Compile>
     <Compile Include="Formularios\AcercaNos.Designer.cs">
       <DependentUpon>AcercaNos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_Inscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_Inscripciones.Designer.cs">
+      <DependentUpon>Form_Inscripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Actividad.cs" />
     <Compile Include="DAO\AD_Actividad.cs" />
@@ -159,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_Carpas.resx">
       <DependentUpon>Form_Carpas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_Inscripciones.resx">
+      <DependentUpon>Form_Inscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_Tipos.resx">
       <DependentUpon>Form_Tipos.cs</DependentUpon>

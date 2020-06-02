@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bienesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carpasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementosDeCocinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +47,7 @@
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             this.usuariosToolStripMenuItem,
             this.acercaDeNosotrosToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem,
-            this.cerrarSesionToolStripMenuItem1});
+            this.cerrarSesionToolStripMenuItem1,
+            this.inscripcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -77,6 +79,21 @@
             this.actividadesToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.actividadesToolStripMenuItem.Text = "Actividades";
             this.actividadesToolStripMenuItem.Click += new System.EventHandler(this.ActividadesToolStripMenuItem_Click);
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarPersonaToolStripMenuItem});
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.personasToolStripMenuItem.Text = "Personas";
+            // 
+            // agregarPersonaToolStripMenuItem
+            // 
+            this.agregarPersonaToolStripMenuItem.Name = "agregarPersonaToolStripMenuItem";
+            this.agregarPersonaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.agregarPersonaToolStripMenuItem.Text = "Agregar persona";
+            this.agregarPersonaToolStripMenuItem.Click += new System.EventHandler(this.agregarPersonaToolStripMenuItem_Click);
             // 
             // bienesToolStripMenuItem
             // 
@@ -195,21 +212,12 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // personasToolStripMenuItem
+            // inscripcionesToolStripMenuItem
             // 
-            this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarPersonaToolStripMenuItem});
-            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
-            this.personasToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.personasToolStripMenuItem.Text = "Personas";
-
-            // 
-            // agregarPersonaToolStripMenuItem
-            // 
-            this.agregarPersonaToolStripMenuItem.Name = "agregarPersonaToolStripMenuItem";
-            this.agregarPersonaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarPersonaToolStripMenuItem.Text = "Agregar persona";
-            this.agregarPersonaToolStripMenuItem.Click += new System.EventHandler(this.agregarPersonaToolStripMenuItem_Click);
+            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
+            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -254,5 +262,6 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarPersonaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
     }
 }

@@ -49,9 +49,6 @@ namespace Juventus.Personas
 
         }
 
-
-
-
         private void CargarComboTiposDocumentos()
         {
             try

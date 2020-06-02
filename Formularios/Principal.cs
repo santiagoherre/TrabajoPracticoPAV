@@ -2,6 +2,7 @@
 using Juventus.Actividades;
 using Juventus.ElementosCocina;
 using Juventus.ElementosElectricos;
+using Juventus.Formularios;
 using Juventus.Personas;
 using Juventus.Usuarios;
 using Juventus.Varios;
@@ -121,6 +122,12 @@ namespace Juventus
         private void agregarPersonaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarPersona ventana = new AgregarPersona();
+            ventana.Show();
+        }
+
+        private void inscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inscripciones ventana = new Inscripciones();
             ventana.Show();
         }
     }
