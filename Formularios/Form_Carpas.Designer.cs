@@ -96,7 +96,7 @@
             this.cmbTipoCarpa.Location = new System.Drawing.Point(104, 22);
             this.cmbTipoCarpa.Name = "cmbTipoCarpa";
             this.cmbTipoCarpa.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoCarpa.TabIndex = 7;
+            this.cmbTipoCarpa.TabIndex = 1;
             // 
             // lblDormitorios
             // 
@@ -130,7 +130,7 @@
             this.btnVer.Location = new System.Drawing.Point(92, 158);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(75, 23);
-            this.btnVer.TabIndex = 3;
+            this.btnVer.TabIndex = 5;
             this.btnVer.Text = "Ver carpas";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -140,7 +140,7 @@
             this.btnAñadir.Location = new System.Drawing.Point(173, 158);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(75, 23);
-            this.btnAñadir.TabIndex = 2;
+            this.btnAñadir.TabIndex = 4;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
@@ -151,7 +151,7 @@
             this.txtDormitorios.Mask = "999";
             this.txtDormitorios.Name = "txtDormitorios";
             this.txtDormitorios.Size = new System.Drawing.Size(27, 20);
-            this.txtDormitorios.TabIndex = 1;
+            this.txtDormitorios.TabIndex = 3;
             this.txtDormitorios.ValidatingType = typeof(int);
             // 
             // txtCaños
@@ -160,7 +160,7 @@
             this.txtCaños.Mask = "99";
             this.txtCaños.Name = "txtCaños";
             this.txtCaños.Size = new System.Drawing.Size(27, 20);
-            this.txtCaños.TabIndex = 0;
+            this.txtCaños.TabIndex = 2;
             this.txtCaños.ValidatingType = typeof(int);
             // 
             // grdCarpas
@@ -179,7 +179,6 @@
             this.grdCarpas.Size = new System.Drawing.Size(360, 150);
             this.grdCarpas.TabIndex = 1;
             this.grdCarpas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCarpas_CellClick);
-            this.grdCarpas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCarpas_CellContentClick);
             // 
             // id
             // 
@@ -216,7 +215,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(587, 193);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -226,7 +225,7 @@
             this.btnModificar.Location = new System.Drawing.Point(506, 193);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);

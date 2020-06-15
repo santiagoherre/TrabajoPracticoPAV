@@ -46,8 +46,14 @@
             this.acercaDeNosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carpasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarCarpasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estdisticasDormitoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaTiposCarpasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listarDormitoriosPorTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +70,8 @@
             this.acercaDeNosotrosToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem1,
-            this.inscripcionesToolStripMenuItem});
+            this.inscripcionesToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -195,6 +202,53 @@
             this.cerrarSesionToolStripMenuItem1.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesionClick);
             // 
+            // inscripcionesToolStripMenuItem
+            // 
+            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
+            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.carpasToolStripMenuItem1});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // carpasToolStripMenuItem1
+            // 
+            this.carpasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listarCarpasToolStripMenuItem,
+            this.listarDormitoriosPorTipoToolStripMenuItem,
+            this.estdisticasDormitoriosToolStripMenuItem,
+            this.estadisticaTiposCarpasToolStripMenuItem});
+            this.carpasToolStripMenuItem1.Name = "carpasToolStripMenuItem1";
+            this.carpasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.carpasToolStripMenuItem1.Text = "Carpas";
+            // 
+            // listarCarpasToolStripMenuItem
+            // 
+            this.listarCarpasToolStripMenuItem.Name = "listarCarpasToolStripMenuItem";
+            this.listarCarpasToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.listarCarpasToolStripMenuItem.Text = "Listar carpas";
+            this.listarCarpasToolStripMenuItem.Click += new System.EventHandler(this.listarCarpasToolStripMenuItem_Click);
+            // 
+            // estdisticasDormitoriosToolStripMenuItem
+            // 
+            this.estdisticasDormitoriosToolStripMenuItem.Name = "estdisticasDormitoriosToolStripMenuItem";
+            this.estdisticasDormitoriosToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.estdisticasDormitoriosToolStripMenuItem.Text = "Estdisticas dormitorios";
+            this.estdisticasDormitoriosToolStripMenuItem.Click += new System.EventHandler(this.estdisticasDormitoriosToolStripMenuItem_Click);
+            // 
+            // estadisticaTiposCarpasToolStripMenuItem
+            // 
+            this.estadisticaTiposCarpasToolStripMenuItem.Name = "estadisticaTiposCarpasToolStripMenuItem";
+            this.estadisticaTiposCarpasToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.estadisticaTiposCarpasToolStripMenuItem.Text = "Estadistica tipos carpas";
+            this.estadisticaTiposCarpasToolStripMenuItem.Click += new System.EventHandler(this.estadisticaTiposCarpasToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = global::Juventus.Properties.Resources.logo_png__final2;
@@ -212,12 +266,12 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // inscripcionesToolStripMenuItem
+            // listarDormitoriosPorTipoToolStripMenuItem
             // 
-            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
-            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            this.listarDormitoriosPorTipoToolStripMenuItem.Name = "listarDormitoriosPorTipoToolStripMenuItem";
+            this.listarDormitoriosPorTipoToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.listarDormitoriosPorTipoToolStripMenuItem.Text = "Listar dormitorios por tipo de carpa ";
+            this.listarDormitoriosPorTipoToolStripMenuItem.Click += new System.EventHandler(this.listarDormitoriosPorTipoToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -263,5 +317,11 @@
         private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarPersonaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carpasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarCarpasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estdisticasDormitoriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaTiposCarpasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarDormitoriosPorTipoToolStripMenuItem;
     }
 }

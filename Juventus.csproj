@@ -34,6 +34,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,6 +67,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conjunto de Datos\ConjuntoDatosPAV.cs">
+      <DependentUpon>ConjuntoDatosPAV.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Conjunto de Datos\ConjuntoDatosPAV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConjuntoDatosPAV.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AD_Inscripciones.cs" />
     <Compile Include="Formularios\AgregarPersona.cs">
       <SubType>Form</SubType>
@@ -67,6 +93,30 @@
     </Compile>
     <Compile Include="Formularios\Form_Inscripciones.Designer.cs">
       <DependentUpon>Form_Inscripciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\CantidadDormitorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\CantidadDormitorios.Designer.cs">
+      <DependentUpon>CantidadDormitorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\EstadisticaDormitoriosCarpas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\EstadisticaDormitoriosCarpas.Designer.cs">
+      <DependentUpon>EstadisticaDormitoriosCarpas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\ListadoCarpas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\ListadoCarpas.Designer.cs">
+      <DependentUpon>ListadoCarpas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\Listadodormitorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Carpas\Listadodormitorios.Designer.cs">
+      <DependentUpon>Listadodormitorios.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Actividad.cs" />
     <Compile Include="DAO\AD_Actividad.cs" />
@@ -149,6 +199,12 @@
       <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="tp1_pavDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tp1_pavDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\AgregarPersona.resx">
       <DependentUpon>AgregarPersona.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,12 +230,28 @@
     <EmbeddedResource Include="Formularios\Form_Tipos.resx">
       <DependentUpon>Form_Tipos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Carpas\CantidadDormitorios.resx">
+      <DependentUpon>CantidadDormitorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Carpas\EstadisticaDormitoriosCarpas.resx">
+      <DependentUpon>EstadisticaDormitoriosCarpas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Carpas\ListadoCarpas.resx">
+      <DependentUpon>ListadoCarpas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM_Motor.resx">
       <DependentUpon>ABM_Motor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Carpas\Listadodormitorios.resx">
+      <DependentUpon>Listadodormitorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\Carpas\EstadisticaCantidadDormitorios.rdlc" />
+    <EmbeddedResource Include="Informes\Carpas\EstadisticaCantTiposCarpas.rdlc" />
+    <EmbeddedResource Include="Informes\Carpas\ListadoCarpas.rdlc" />
+    <EmbeddedResource Include="Informes\Carpas\ListadoDormitorios.rdlc" />
     <EmbeddedResource Include="obj\Debug\Juventus.Carpas.Carpas.resources" />
     <EmbeddedResource Include="obj\Debug\Juventus.Carpa_Prueba_Pedro.AgregarArea.resources" />
     <EmbeddedResource Include="obj\Debug\Juventus.ElementosCocina.Form_ElemCocina.resources" />
@@ -202,11 +274,23 @@
       <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\Juventus.exe.config" />
+    <None Include="Conjunto de Datos\ConjuntoDatosPAV.xsc">
+      <DependentUpon>ConjuntoDatosPAV.xsd</DependentUpon>
+    </None>
+    <None Include="Conjunto de Datos\ConjuntoDatosPAV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConjuntoDatosPAV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Conjunto de Datos\ConjuntoDatosPAV.xss">
+      <DependentUpon>ConjuntoDatosPAV.xsd</DependentUpon>
+    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\Juventus.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\Juventus.csproj.GenerateResource.cache" />
     <None Include="obj\Debug\Juventus.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -221,6 +305,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="tp1_pavDataSet.xsc">
+      <DependentUpon>tp1_pavDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tp1_pavDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tp1_pavDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tp1_pavDataSet.xss">
+      <DependentUpon>tp1_pavDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -241,6 +336,19 @@
     <Content Include="obj\Debug\Juventus.pdb" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\tp1_pavDataSet.Designer.cs.dll" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="logo_png-.final2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

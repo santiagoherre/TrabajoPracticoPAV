@@ -3,6 +3,8 @@ using Juventus.Actividades;
 using Juventus.ElementosCocina;
 using Juventus.ElementosElectricos;
 using Juventus.Formularios;
+using Juventus.Formularios_Reportes;
+using Juventus.Formularios_Reportes.Carpas;
 using Juventus.Personas;
 using Juventus.Usuarios;
 using Juventus.Varios;
@@ -129,6 +131,30 @@ namespace Juventus
         {
             Inscripciones ventana = new Inscripciones();
             ventana.Show();
+        }
+
+        private void listarCarpasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoCarpas ventana = new ListadoCarpas();
+            ventana.ShowDialog();
+        }
+
+        private void estadisticaTiposCarpasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaDormitoriosCarpas ventana = new EstadisticaDormitoriosCarpas();
+            ventana.ShowDialog();
+        }
+
+        private void estdisticasDormitoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CantidadDormitorios ventana = new CantidadDormitorios();
+            ventana.ShowDialog();
+        }
+
+        private void listarDormitoriosPorTipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Listadodormitorios ventana = new Listadodormitorios();
+            ventana.ShowDialog();
         }
     }
 }

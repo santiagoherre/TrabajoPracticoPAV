@@ -208,6 +208,122 @@ namespace Juventus
             return resultado;
         }
 
+        public static DataTable listadoCarpas()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Carpas ORDER BY cantidadDormitorios";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception) { throw; }
+
+            finally { cn.Close(); }
+        }
+
+        public static DataTable obtenerEstadisticaTiposCarpas()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT t.nombre as Nombre, COUNT (c.idTipoCarpa) as Cantidad FROM TiposCarpas T INNER JOIN Carpas c ON t.id = c.idTipoCarpa GROUP BY t.nombre";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception) { throw; }
+
+            finally { cn.Close(); }
+        }
+
+        public static DataTable obtenerDormitoriosPorTipo()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select t.nombre as tipoCarpa, count(c.cantidadDormitorios) as Cantidad, c.cantidadDormitorios from Carpas c INNER JOIN TiposCarpas t ON c.idTipoCarpa = t.id GROUP BY c.cantidadDormitorios, t.nombre";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception) { throw; }
+
+            finally { cn.Close(); }
+        }
+
+        public static DataTable obtenerListadiDormitorios()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaDB"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT t.nombre, c.cantidadDormitorios FROM Carpas c INNER JOIN TiposCarpas t ON c.idTipoCarpa = t.id ORDER BY c.cantidadDormitorios";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception) { throw; }
+
+            finally { cn.Close(); }
+        }
+
 
     }
 }

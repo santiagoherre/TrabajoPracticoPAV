@@ -75,6 +75,7 @@ namespace Juventus
             }
             lblid.Visible = false;
             txtId.Visible = false;
+            cmbTipoCarpa.Focus();
         }
 
         private void cargarGrilla()
@@ -110,10 +111,6 @@ namespace Juventus
             txtId.Visible = false;
         }
 
-        private void grdCarpas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void grdCarpas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
