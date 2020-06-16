@@ -221,5 +221,70 @@ namespace Juventus.Vehiculo
             }
             finally { cn.Close(); }
         }
+
+        public static DataTable ObtenerActividadesXvehiculos()
+        {
+            SqlConnection cn = new SqlConnection(connectionString);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT v.patente as Vehiculo, a.id as CantActividades FROM Actividades a inner join Vehiculos v On a.patente = v.patente";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static DataTable ObtenerVehiculosXTipoActividad()
+        {
+            SqlConnection cn = new SqlConnection(connectionString);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT v.patente as CantVehiculos, ta.id, ta.nombre FROM Vehiculos v inner join Actividades a ON a.patente = v.patente inner join TiposActividades ta ON ta.id = a.idTipoActividad ";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }
