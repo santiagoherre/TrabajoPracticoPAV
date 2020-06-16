@@ -4,7 +4,9 @@ using Juventus.ElementosCocina;
 using Juventus.ElementosElectricos;
 using Juventus.Formularios;
 using Juventus.Formularios_Reportes;
+using Juventus.Formularios_Reportes.Actividades;
 using Juventus.Formularios_Reportes.Carpas;
+using Juventus.Formularios_Reportes.Vehiculos;
 using Juventus.Personas;
 using Juventus.Usuarios;
 using Juventus.Varios;
@@ -154,6 +156,30 @@ namespace Juventus
         private void listarDormitoriosPorTipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Listadodormitorios ventana = new Listadodormitorios();
+            ventana.ShowDialog();
+        }
+
+        private void listarActvididadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListadoActividades ventana = new FormListadoActividades();
+            ventana.ShowDialog();
+        }
+
+        private void listadoDeVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoVehiculos_Form ventana = new ListadoVehiculos_Form();
+            ventana.ShowDialog();
+        }
+
+        private void actividadesPorVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteVehiculos1 ventana = new ReporteVehiculos1();
+            ventana.ShowDialog();
+        }
+
+        private void vehiculoPorTipoActividadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteVehiculo2 ventana = new ReporteVehiculo2();
             ventana.ShowDialog();
         }
     }

@@ -261,8 +261,9 @@ namespace Juventus.Vehiculo
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT v.patente as CantVehiculos, ta.id, ta.nombre FROM Vehiculos v inner join Actividades a ON a.patente = v.patente inner join TiposActividades ta ON ta.id = a.idTipoActividad ";
-
+                string consulta = "SELECT ta.nombre as Nombre, COUNT (a.patente) as Cantidad FROM TiposActividades ta INNER JOIN Actividades a ON ta.id = a.idTipoActividad GROUP BY ta.nombre";
+                
+                cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

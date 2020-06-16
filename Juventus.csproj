@@ -94,6 +94,12 @@
     <Compile Include="Formularios\Form_Inscripciones.Designer.cs">
       <DependentUpon>Form_Inscripciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios_Reportes\Actividades\FormListadoActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Actividades\FormListadoActividades.Designer.cs">
+      <DependentUpon>FormListadoActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios_Reportes\Carpas\CantidadDormitorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,24 @@
     </Compile>
     <Compile Include="Formularios_Reportes\Carpas\Listadodormitorios.Designer.cs">
       <DependentUpon>Listadodormitorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ListadoVehiculos_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ListadoVehiculos_Form.Designer.cs">
+      <DependentUpon>ListadoVehiculos_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ReporteVehiculo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ReporteVehiculo2.Designer.cs">
+      <DependentUpon>ReporteVehiculo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ReporteVehiculos1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Reportes\Vehiculos\ReporteVehiculos1.Designer.cs">
+      <DependentUpon>ReporteVehiculos1.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Actividad.cs" />
     <Compile Include="DAO\AD_Actividad.cs" />
@@ -230,6 +254,19 @@
     <EmbeddedResource Include="Formularios\Form_Tipos.resx">
       <DependentUpon>Form_Tipos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Actividades\FormListadoActividades.resx">
+      <DependentUpon>FormListadoActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Vehiculos\ListadoVehiculos_Form.resx">
+      <DependentUpon>ListadoVehiculos_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Vehiculos\ReporteVehiculo2.resx">
+      <DependentUpon>ReporteVehiculo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Reportes\Vehiculos\ReporteVehiculos1.resx">
+      <DependentUpon>ReporteVehiculos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\Actividades\ListadoActividadPorTipo.rdlc" />
     <EmbeddedResource Include="Formularios_Reportes\Carpas\CantidadDormitorios.resx">
       <DependentUpon>CantidadDormitorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +289,9 @@
     <EmbeddedResource Include="Informes\Carpas\EstadisticaCantTiposCarpas.rdlc" />
     <EmbeddedResource Include="Informes\Carpas\ListadoCarpas.rdlc" />
     <EmbeddedResource Include="Informes\Carpas\ListadoDormitorios.rdlc" />
+    <EmbeddedResource Include="Informes\Vechiculos\ListadoVehiculos.rdlc" />
+    <EmbeddedResource Include="Informes\Vechiculos\ReporteVehiculo1.rdlc" />
+    <EmbeddedResource Include="Informes\Vechiculos\ReporteVehiculos2.rdlc" />
     <EmbeddedResource Include="obj\Debug\Juventus.Carpas.Carpas.resources" />
     <EmbeddedResource Include="obj\Debug\Juventus.Carpa_Prueba_Pedro.AgregarArea.resources" />
     <EmbeddedResource Include="obj\Debug\Juventus.ElementosCocina.Form_ElemCocina.resources" />

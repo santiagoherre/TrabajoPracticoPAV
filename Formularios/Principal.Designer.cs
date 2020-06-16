@@ -48,12 +48,18 @@
             this.cerrarSesionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actividadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarActvididadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carpasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listarCarpasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarDormitoriosPorTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estdisticasDormitoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticaTiposCarpasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actividadesPorVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listarDormitoriosPorTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculoPorTipoActividadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,10 +218,27 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carpasToolStripMenuItem1});
+            this.actividadesToolStripMenuItem1,
+            this.carpasToolStripMenuItem1,
+            this.vehiculosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // actividadesToolStripMenuItem1
+            // 
+            this.actividadesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listarActvididadesToolStripMenuItem});
+            this.actividadesToolStripMenuItem1.Name = "actividadesToolStripMenuItem1";
+            this.actividadesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.actividadesToolStripMenuItem1.Text = "Actividades";
+            // 
+            // listarActvididadesToolStripMenuItem
+            // 
+            this.listarActvididadesToolStripMenuItem.Name = "listarActvididadesToolStripMenuItem";
+            this.listarActvididadesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.listarActvididadesToolStripMenuItem.Text = "Listar actividades por tipo";
+            this.listarActvididadesToolStripMenuItem.Click += new System.EventHandler(this.listarActvididadesToolStripMenuItem_Click);
             // 
             // carpasToolStripMenuItem1
             // 
@@ -235,6 +258,13 @@
             this.listarCarpasToolStripMenuItem.Text = "Listar carpas";
             this.listarCarpasToolStripMenuItem.Click += new System.EventHandler(this.listarCarpasToolStripMenuItem_Click);
             // 
+            // listarDormitoriosPorTipoToolStripMenuItem
+            // 
+            this.listarDormitoriosPorTipoToolStripMenuItem.Name = "listarDormitoriosPorTipoToolStripMenuItem";
+            this.listarDormitoriosPorTipoToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.listarDormitoriosPorTipoToolStripMenuItem.Text = "Listar dormitorios por tipo de carpa ";
+            this.listarDormitoriosPorTipoToolStripMenuItem.Click += new System.EventHandler(this.listarDormitoriosPorTipoToolStripMenuItem_Click);
+            // 
             // estdisticasDormitoriosToolStripMenuItem
             // 
             this.estdisticasDormitoriosToolStripMenuItem.Name = "estdisticasDormitoriosToolStripMenuItem";
@@ -248,6 +278,30 @@
             this.estadisticaTiposCarpasToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.estadisticaTiposCarpasToolStripMenuItem.Text = "Estadistica tipos carpas";
             this.estadisticaTiposCarpasToolStripMenuItem.Click += new System.EventHandler(this.estadisticaTiposCarpasToolStripMenuItem_Click);
+            // 
+            // vehiculosToolStripMenuItem
+            // 
+            this.vehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actividadesPorVehiculoToolStripMenuItem,
+            this.listadoDeVehiculosToolStripMenuItem,
+            this.vehiculoPorTipoActividadToolStripMenuItem});
+            this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vehiculosToolStripMenuItem.Text = "Vehiculos";
+            // 
+            // actividadesPorVehiculoToolStripMenuItem
+            // 
+            this.actividadesPorVehiculoToolStripMenuItem.Name = "actividadesPorVehiculoToolStripMenuItem";
+            this.actividadesPorVehiculoToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.actividadesPorVehiculoToolStripMenuItem.Text = "Actividades por vehiculo";
+            this.actividadesPorVehiculoToolStripMenuItem.Click += new System.EventHandler(this.actividadesPorVehiculoToolStripMenuItem_Click);
+            // 
+            // listadoDeVehiculosToolStripMenuItem
+            // 
+            this.listadoDeVehiculosToolStripMenuItem.Name = "listadoDeVehiculosToolStripMenuItem";
+            this.listadoDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.listadoDeVehiculosToolStripMenuItem.Text = "Listado de vehiculos";
+            this.listadoDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeVehiculosToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -266,12 +320,12 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // listarDormitoriosPorTipoToolStripMenuItem
+            // vehiculoPorTipoActividadToolStripMenuItem
             // 
-            this.listarDormitoriosPorTipoToolStripMenuItem.Name = "listarDormitoriosPorTipoToolStripMenuItem";
-            this.listarDormitoriosPorTipoToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
-            this.listarDormitoriosPorTipoToolStripMenuItem.Text = "Listar dormitorios por tipo de carpa ";
-            this.listarDormitoriosPorTipoToolStripMenuItem.Click += new System.EventHandler(this.listarDormitoriosPorTipoToolStripMenuItem_Click);
+            this.vehiculoPorTipoActividadToolStripMenuItem.Name = "vehiculoPorTipoActividadToolStripMenuItem";
+            this.vehiculoPorTipoActividadToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.vehiculoPorTipoActividadToolStripMenuItem.Text = "Vehiculo por tipo actividad";
+            this.vehiculoPorTipoActividadToolStripMenuItem.Click += new System.EventHandler(this.vehiculoPorTipoActividadToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -323,5 +377,11 @@
         private System.Windows.Forms.ToolStripMenuItem estdisticasDormitoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaTiposCarpasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarDormitoriosPorTipoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actividadesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarActvididadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeVehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actividadesPorVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehiculoPorTipoActividadToolStripMenuItem;
     }
 }
